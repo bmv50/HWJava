@@ -1,13 +1,20 @@
-public class HomeWorkApp {
-    public static void main(String[] args) {
-        compareNumbers();
-    }
-    public static void compareNumbers() {
-        int a = 25, b = 20;
-        if (a >= b) {
-            System.out.println("a >= b");
-        } else {
-            System.out.println("a < b");
-        }
+public class HomeWorkApp
+{
+    public static void main(String[] args)
+    {
+        AnimalFactory factory = new AnimalFactory();
+
+        Cat cat = factory.newCat(200);
+        Dog dog = factory.newDog(500, 10);
+
+        cat.runOn(150);
+        cat.swimOn(5);
+
+        dog.runOn(550);
+        dog.swimOn(9);
+
+        System.out.println("Животных создано: " + factory.getAnimalsCount());
+        System.out.println("Собак создано: " + factory.getDogsCount());
+        System.out.println("Кошек создано: " + factory.getCatsCount());
     }
 }
